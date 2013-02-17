@@ -1,7 +1,7 @@
 fog
 ===
 
-Hello, this is [@mstred] [1] and fog[4] is my first move into Github as a open source contributor.
+Hello, this is [@mstred] [1] and [fog] [4] is my first move into Github as a open source contributor.
 
 About
 -----
