@@ -14,9 +14,12 @@ The difference between [fog] [4] and [af-java-spring] [2] is in the project stru
 Composition
 -----------
 
-For the library kit, set up in a Maven pom.xml file, has the following dependencies:
+For the library kit, it's set up in a Maven pom.xml file with the following core dependencies:
+
 * JavaServer Faces (with the addition of Primefaces tool set)
+
 * Java Persistence API (for Object-Relational database mapping, powered by Hibernate Implementation)
+
 * Spring Framework (Mainly for DI/IoC container features, but also to help with ORM features via Entity Manager injections and transaction management)
 
 
