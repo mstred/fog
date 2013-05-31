@@ -3,8 +3,8 @@ package com.mstred;
 import java.text.MessageFormat;
 import java.util.List;
 
-// import javax.inject.Inject;
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.inject.Inject;
+// import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Controller;
 
@@ -15,8 +15,8 @@ public class ManagedBean {
 		return MessageFormat.format("Hello, this is {0}.", this.getClass().getSimpleName());
 	}
 
-	//@Inject
-	@Autowired
+	@Inject
+	//@Autowired
 	private Repository<Entity> repo;
 	
 	public List<Entity> findAll() {
