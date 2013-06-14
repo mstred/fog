@@ -4,9 +4,9 @@ import java.text.MessageFormat;
 import java.util.List;
 
 import javax.inject.Inject;
-// import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Controller;
+// import org.springframework.beans.factory.annotation.Autowired;
 
 @Controller("managedBean")
 public class ManagedBean {
@@ -15,8 +15,8 @@ public class ManagedBean {
 		return MessageFormat.format("Hello, this is {0}.", this.getClass().getSimpleName());
 	}
 
-	@Inject
 	//@Autowired
+	@Inject
 	private Repository<Entity> repo;
 	
 	public List<Entity> findAll() {
@@ -25,11 +25,15 @@ public class ManagedBean {
 	
 	public ManagedBean() {
 		Entity e = null;
-		for (int i = 1; i <= 10; i++) {
-			e = new Entity();
-			e.setName("Entity " + i);
-			e = null;
-			repo.insert(e);
+		try {
+			for (int i = 1; i <= 10; i++) {
+				e = new Entity();
+				e.setName("Entity " + i);
+				e = null;
+				repo.insert(e);
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace(System.err);
 		}
 	}
 }
