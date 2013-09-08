@@ -1,22 +1,20 @@
 package com.mstred;
 
-import java.text.MessageFormat;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-import javax.inject.Inject;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-// import org.springframework.beans.factory.annotation.Autowired;
 
 @Controller("managedBean")
 public class ManagedBean {
 	
 	public String getHello() {
-		return MessageFormat.format("Hello, this is {0}.", this.getClass().getSimpleName());
+		return String.format("Hello, this is %s.", this.getClass().getSimpleName());
 	}
 
-	//@Autowired
-	@Inject
+	@Autowired
 	private Repository<Entity> repo;
 	
 	public List<Entity> findAll() {
@@ -24,16 +22,20 @@ public class ManagedBean {
 	}
 	
 	public ManagedBean() {
-		Entity e = null;
-		try {
-			for (int i = 1; i <= 10; i++) {
-				e = new Entity();
-				e.setName("Entity " + i);
-				e = null;
-				repo.insert(e);
+		if (repo == null) {
+			Logger.getLogger(getHello()).log(Level.WARNING, "@Inject not valid");
+		} else {
+			Entity e = null;
+			try {
+				for (int i = 1; i <= 10; i++) {
+					e = new Entity();
+					e.setName("Entity " + i);
+					e = null;
+					repo.insert(e);
+				}
+			} catch (Exception ex) {
+				ex.printStackTrace(System.err);
 			}
-		} catch (Exception ex) {
-			ex.printStackTrace(System.err);
 		}
 	}
 }
