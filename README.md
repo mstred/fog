@@ -1,15 +1,15 @@
 fog
 ===
 
-Hello, this is [@mstred] [1] and [fog] [4] is my first move into Github as a open source contributor.
+Hello, this is [@mstred][1] and [fog][4] is my first move into Github as a open source contributor.
 
 About
 -----
 
 Although it's still under construction, this project is meant to be a plain example and template for creating new Java enterprise-driven apps.
 
-fog is a fork from [appfog/af-java-spring] [2] project. I really loved the idea behind [@appfog] [3] building bootstrap projects to help with starting up their cloud nodes, and so I'm here to help spreading the source.
-The difference between [fog] [4] and [af-java-spring] [2] is in the project strucure and technologies that give life to the application.
+fog is a fork from [appfog/af-java-spring][2] project. I really loved the idea behind [@appfog][3] building bootstrap projects to help with starting up their cloud nodes, and so I'm here to help spreading the source.
+The difference between [fog][4] and [af-java-spring][2] is in the project strucure and technologies that give life to the application.
 
 Composition
 -----------
